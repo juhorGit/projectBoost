@@ -375,7 +375,7 @@ PrefabInstance:
     - target: {fileID: 4039285488723839976, guid: 47c47e8f760f47642ab0d874f613a5a4,
         type: 3}
       propertyPath: m_TagString
-      value: Friendly
+      value: Goal
       objectReference: {fileID: 0}
     - target: {fileID: 4039285488723839980, guid: 47c47e8f760f47642ab0d874f613a5a4,
         type: 3}

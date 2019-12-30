@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Rocket : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -46,10 +46,22 @@ public class Rocket : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(!collision.collider.tag.Equals("Friendly"))
+        switch (collision.gameObject.tag)
         {
-            StopShip();
-            rbRocketBody.position = rocketStartPosition;
+            case ("Friendly"):
+
+            break;
+            case ("Goal"):
+                print("REACHED GOAL!");
+                Destroy(gameObject);
+                SceneManager.LoadScene("Level 2", LoadSceneMode.Single);
+                break;
+
+            default:
+                print("Destroyed!");
+                StopShip();
+                rbRocketBody.position = rocketStartPosition;
+                break;
         }
     }
 
